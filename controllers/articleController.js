@@ -24,13 +24,12 @@ exports.createNewArticle = async (req, res) => {
   
         if (!title) {
             return res.status(400).json({ message: "Title field cannot be empty" });
-        }
-  
+        };  
         if (article) {
             return res.status(409).json({
                 message: `${title} already exists`,
             });
-        }
+        };
         const newArticle = {
             title,
             tags,
