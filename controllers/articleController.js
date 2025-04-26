@@ -5,8 +5,8 @@ const Article = require('../models/article.js');
 exports.getAllArticles = async (req, res) => {
     try {
         const articles = await Article.findAll();
-        if (!articles) {
-            return res.status(204).json({ message: "No article found" });
+        if (articles.length === 0) {
+            return res.status(200).json({ message: "No article found" });
         }
         return res.status(200).json({ message: "Articles Retrieved successfully", articles });
     } catch (error) {

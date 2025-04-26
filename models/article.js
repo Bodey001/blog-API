@@ -1,6 +1,59 @@
 const { Sequelize, DataTypes } = require("sequelize");
 const sequelize = require('../config/sequelize.js');
 
+
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     Article:
+ *       type: object
+ *       properties:
+ *         id:
+ *           type: integer
+ *           description: The article ID
+ *           readOnly: true
+ *         title:
+ *           type: string
+ *           description: The article title
+ *         content:
+ *           type: string
+ *           description: The article content
+ *         date_published:
+ *           type: string
+ *           format: date-time
+ *           example: "2023-10-27T11:30:00.000Z"
+ *         tag:
+ *           type: array
+ *           description: The article tags
+ *           items:
+ *             type: string
+ *         createdAt:
+ *           type: string
+ *           format: date-time
+ *           description: The date the article was created
+ *           readOnly: true
+ *         updatedAt:
+ *           type: string
+ *           format: date-time
+ *           description: The date the article was last updated
+ *           readOnly: true
+ *     ArticleInput:
+ *       type: object
+ *       properties:
+ *         title:
+ *           type: string
+ *           description: The article title
+ *         content:
+ *           type: string
+ *           description: The article content
+ *         tag:
+ *           type: array
+ *           description: The article tags
+ *           items:
+ *             type: string
+ */
+
 const Article = sequelize.define(
     'Article',
     {
@@ -20,7 +73,8 @@ const Article = sequelize.define(
             defaultValue: DataTypes.NOW
         },
         tag: {
-            type: DataTypes.STRING
+            type: DataTypes.JSON,
+            defaultValue: []
         }
     }
 );
