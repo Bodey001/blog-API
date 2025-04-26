@@ -15,7 +15,7 @@ app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 app.listen(PORT, async (req, res) => {
   try {
     await sequelize.sync();
-    console.log("Connection has been establised successfully");
+    console.log("Database connection has been establised successfully");
     console.log(`Server is listening on port ${PORT}`);
     console.log(`Swagger UI available at http://localhost:${PORT}/api-docs`);
   } catch (error) {
