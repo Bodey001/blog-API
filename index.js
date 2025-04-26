@@ -2,14 +2,12 @@ const express = require("express");
 require("dotenv").config();
 const PORT = process.env.PORT;
 const sequelize = require("./config/sequelize.js");
-const swaggerUi = require("swagger-ui-express");
-const swaggerSpec = require("./config/swaggerOptions.js");
+const { swaggerSpec, swaggerUi } = require("./config/swaggerOptions.js");
 
 const app = express();
 app.use(express.json());
 
 const articleRoutes = require("./routes/article.js");
-
 app.use(articleRoutes);
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));

@@ -80,7 +80,7 @@ const articleController = require("../controllers/articleController.js");
 router.get("/articles", articleController.getAllArticles);
 
 //POST a new article
-router.post("/articles/", articleController.createNewArticle);
+router.post("/articles", articleController.createNewArticle);
 
 
 
@@ -265,16 +265,8 @@ router.post("/articles/", articleController.createNewArticle);
  *                   example: "Internal Server Error Something went wrong"
  */
 
-
-//GET article by ID
-router.get("/articles/:id", articleController.getArticleById);
-
-
-//DELETE an Article by id
-router.delete("/articles/:id", articleController.deleteArticleById);
-
-
-//PATCH an Article by id
-router.patch("/articles/:id", articleController.updateArticleById);
+router.get("/articles/:id", articleController.getArticleById);      //GET article by ID
+router.delete("/articles/:id", articleController.deleteArticleById);  //DELETE an Article by id
+router.patch("/articles/:id", articleController.updateArticleById);   //PATCH an Article by id
 
 module.exports = router;

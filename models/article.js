@@ -8,9 +8,12 @@ const sequelize = require('../config/sequelize.js');
  *   schemas:
  *     Article:
  *       type: object
+ *       required:
+ *         - title
  *       properties:
  *         id:
  *           type: integer
+ *           format: int64
  *           description: The article ID
  *           readOnly: true
  *         title:
@@ -22,6 +25,7 @@ const sequelize = require('../config/sequelize.js');
  *         date_published:
  *           type: string
  *           format: date-time
+ *           description: The publication date
  *           example: "2023-10-27T11:30:00.000Z"
  *         tag:
  *           type: array
