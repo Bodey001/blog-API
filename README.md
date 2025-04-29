@@ -69,7 +69,7 @@ npm run dev
 -    The API will be accessible at http://localhost:[PORT]
 
 ## API Endpoints
-- Swagger Documentation available at http://localhost:[3000]/api-docs
+- Swagger Documentation available at http://localhost:[PORT]/api-docs
 
 ##  Error Handling
 The API follows standard HTTP status codes to indicate the outcome of requests
