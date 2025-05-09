@@ -64,7 +64,7 @@ DB_HOST=your-database-host
 ### Running the API
 -   Start the MySQL service
 -   Run the API using npm:
-npm run dev
+npm start
 
 -    The API will be accessible at http://localhost:[PORT]
 
